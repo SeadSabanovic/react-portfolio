@@ -6,8 +6,8 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Balcony from "./components/Balcony";
-import About from "./components/About/About";
+import About from "./components/about/About";
+import Balcony from "./components/Balcony/Balcony";
 
 function App() {
   const slider = useRef();
@@ -131,6 +131,13 @@ function App() {
               <h1>Portfolio</h1>
               <h3>Sead Sabanovic</h3>
             </div>
+            <Balcony />
+            <About>
+              <div className="slider__section-content">
+                <h1>Portfolio</h1>
+                <h3>Sead Sabanovic</h3>
+              </div>
+            </About>
             <About>
               <div className="slider__section-content">
                 <h1>Portfolio</h1>
