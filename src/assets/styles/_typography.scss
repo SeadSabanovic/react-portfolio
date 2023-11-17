@@ -1,0 +1,43 @@
+body {
+  font-family: "Syne", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 4.827rem;
+}
+
+h2 {
+  font-size: 3.713rem;
+}
+
+h3 {
+  font-size: 2.856rem;
+}
+
+h4 {
+  font-size: 2.197rem;
+}
+
+h5 {
+  font-size: 1.69rem;
+}
+
+h6 {
+  font-size: 1.3rem;
+}
+
+a {
+  font-weight: 800;
+  text-decoration: none;
+  color: $color-accent;
+}
