@@ -23,6 +23,29 @@ const PROJECTS = [
   {
     name: "Saloopo",
   },
-  
+  {
+    name: "Campus Clutch",
+  },
+  {
+    name: "Salewa",
+  },
+  {
+    name: "Saloopo",
+  },
+  {
+    name: "Salewa",
+  },
+  {
+    name: "Saloopo",
+  },
+  {
+    name: "Salewa",
+  },
+  {
+    name: "Saloopo",
+  },
+  {
+    name: "Saloopo",
+  },
 ];
 export default PROJECTS;

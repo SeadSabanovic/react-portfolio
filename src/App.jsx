@@ -30,7 +30,7 @@ function App() {
         scrollTrigger: {
           trigger: slider.current,
           pin: true,
-          scrub: 1,
+          scrub: 2,
           end: "+=" + amountToScroll,
           invalidateOnRefresh: true,
         },
@@ -58,7 +58,7 @@ function App() {
       }); */
 
       // First animation: Scale from 1 to 2.3
-      /* tl.to(".work .room", {
+      tl.to(".work .room", {
         scale: 2.3,
         transformOrigin: "center",
         ease: ExpoScaleEase.config(1, 2.3),
@@ -68,127 +68,102 @@ function App() {
           end: "left-=30% left",
           containerAnimation: tl,
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       }).to(".work .room", {
         scale: 1,
         stagger: 0.1,
         immediateRender: false,
         transformOrigin: "center",
-        ease: ExpoScaleEase.config(1, 2.3),
+        ease: ExpoScaleEase.config(2.3, 1),
         scrollTrigger: {
           trigger: ".work .polaroids",
           start: "left-=30% left",
           end: "left left",
           containerAnimation: tl,
           scrub: true,
-          markers: true,
+          // markers: true,
         },
-      }); */
+      });
 
-      // Second animation: Scale from 2.3 to 1
-      /* tl.fromTo(
-        ".work .room",
-        {
-          scale: 2.3,
-          transformOrigin: "center",
-          immediateRender: false,
-          // ease: ExpoScaleEase.config(2.3, 1),
-          scrollTrigger: {
-            trigger: ".work .polaroids",
-            start: "left-=30% left",
-            end: "left-=10% left",
-            containerAnimation: tl,
-            scrub: true,
-            markers: true,
-          },
-        },
-        {
-          scale: 1,
-          transformOrigin: "center",
-          immediateRender: false,
-        }
-      ); */
-    }, 500);
-
-    /* BG
-      .to(
+      tl.to(
         ".landing__city__tree--1",
         {
           backgroundPositionX: `-=${slides.length * 100}%`,
         },
         "-=100%"
       )
-      .to(
-        ".landing__city__tree--2",
-        {
-          backgroundPositionX: `-=${slides.length * 90}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__tree--3",
-        {
-          backgroundPositionX: `-=${slides.length * 80}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--1",
-        {
-          backgroundPositionX: `-=${slides.length * 90}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--2",
-        {
-          backgroundPositionX: `-=${slides.length * 85}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--3",
-        {
-          backgroundPositionX: `-=${slides.length * 85}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--4",
-        {
-          backgroundPositionX: `-=${slides.length * 55}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--6",
-        {
-          backgroundPositionX: `-=${slides.length * 40}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--7",
-        {
-          backgroundPositionX: `-=${slides.length * 38}%`,
-        },
-        "-=100%"
-      )
-      .to(
-        ".landing__city__building--8",
-        {
-          backgroundPositionX: `-=${slides.length * 20}%`,
-        },
-        "-=100%"
-      ); */
+        .to(
+          ".landing__city__tree--2",
+          {
+            backgroundPositionX: `-=${slides.length * 90}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__tree--3",
+          {
+            backgroundPositionX: `-=${slides.length * 80}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--1",
+          {
+            backgroundPositionX: `-=${slides.length * 90}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--2",
+          {
+            backgroundPositionX: `-=${slides.length * 85}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--3",
+          {
+            backgroundPositionX: `-=${slides.length * 85}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--4",
+          {
+            backgroundPositionX: `-=${slides.length * 55}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--6",
+          {
+            backgroundPositionX: `-=${slides.length * 40}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--7",
+          {
+            backgroundPositionX: `-=${slides.length * 38}%`,
+          },
+          "-=100%"
+        )
+        .to(
+          ".landing__city__building--8",
+          {
+            backgroundPositionX: `-=${slides.length * 20}%`,
+          },
+          "-=100%"
+        );
+    }, 500);
   });
   return (
     <>
       <div className="slider" ref={slider}>
         <div className="slider__inner" ref={sliderInner}>
           <div className="slider__inner__wrap">
-            {/* <div className="slider__section-content m_w_f">
+            <div className="slider__section-content m_w_f">
               <h1>Portfolio</h1>
               <h4>Sead Sabanovic</h4>
             </div>
@@ -199,9 +174,9 @@ function App() {
                 quas et sequi nulla sed aut odit quibusdam temporibus tenetur
                 deserunt.
               </p>
-            </div> */}
+            </div>
             <Balcony />
-            {/* <About>
+            <About>
               <div className="slider__section-content">
                 <h3>ABOUT</h3>
                 <p>
@@ -210,7 +185,7 @@ function App() {
                   Corrupti laborum quasi atque cum.
                 </p>
               </div>
-            </About> */}
+            </About>
             <Work>
               <div className="slider__section-content">
                 <h3>Work</h3>
@@ -223,8 +198,11 @@ function App() {
               </div>
             </Work>
             <div className="slider__section-content m_w_f">
-              <h1>Portfolio</h1>
-              <h3>Sead Sabanovic</h3>
+              <h3>Credits</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                perspiciatis.
+              </p>
             </div>
           </div>
         </div>

@@ -166,6 +166,7 @@ body {
 .about,
 .balcony,
 .work {
+  position: relative;
   height: 100vh;
   display: inline-block;
 }
@@ -373,6 +374,19 @@ body {
     margin-bottom: -1px;
   }
 
+  .desk {
+    position: absolute;
+    width: 60vh;
+    left: 40vh;
+  }
+
+  .walldeco {
+    position: absolute;
+    right: 90vh;
+    width: 60vh;
+    margin-bottom: -1px;
+  }
+
   .polaroids {
     padding-top: 10vh;
     padding: 10vh 100vh 0 10vh;
@@ -399,22 +413,10 @@ body {
         filter: grayscale(100%);
       }
 
-      &--2 {
-        left: calc(24vh * 2);
-      }
-
-      &--3 {
-        left: calc(24vh * 2);
-      }
-
-      &--4 {
-        top: 35vh;
-        left: calc(24vh * 2);
-      }
-
       &__name {
         font-size: 0.5vh;
         margin-top: 0.5vh;
+        text-align: center;
       }
     }
   }
