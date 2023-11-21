@@ -6,10 +6,10 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import About from "./components/about/About";
-import Work from "./components/work/Work";
-import Balcony from "./components/Balcony/Balcony";
+import Work from "./components/Work";
+import Balcony from "./components/Balcony";
 import { ExpoScaleEase } from "gsap/all";
+import About from "./components/About";
 
 function App() {
   const slider = useRef();

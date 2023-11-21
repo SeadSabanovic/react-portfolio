@@ -1,5 +1,5 @@
-import coffee from "../../assets/images/coffee.svg";
-import hasbulla from "../../assets/images/hasbulla.gif";
+import coffee from "../assets/images/coffee.svg";
+import hasbulla from "../assets/images/hasbulla.gif";
 export default function Coffee() {
   return (
     <div className="coffee">

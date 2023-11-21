@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import kitchen from '../../assets/images/kitchen.svg'
+import kitchen from '../assets/images/kitchen.svg'
 
 export default function Fridge() {
   const [currentTime, setCurrentTime] = useState(new Date());
