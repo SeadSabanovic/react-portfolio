@@ -7,7 +7,9 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/about/About";
+import Work from "./components/work/Work";
 import Balcony from "./components/Balcony/Balcony";
+import { ExpoScaleEase } from "gsap/all";
 
 function App() {
   const slider = useRef();
@@ -30,27 +32,86 @@ function App() {
           pin: true,
           scrub: 1,
           end: "+=" + amountToScroll,
+          invalidateOnRefresh: true,
         },
       });
 
       tl.to(sliderInner.current, {
         x: -amountToScroll,
       });
+
+      const slides = gsap.utils.toArray(".slider__section-content");
+
+      /* slides.forEach((slide) => {
+        tl.from(slide, {
+          y: 50,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: slide,
+            start: "left center",
+            end: "center center",
+            containerAnimation: tl,
+            scrub: true,
+            ease: "elastic.out(1,1)",
+          },
+        });
+      }); */
+
+      // First animation: Scale from 1 to 2.3
+      /* tl.to(".work .room", {
+        scale: 2.3,
+        transformOrigin: "center",
+        ease: ExpoScaleEase.config(1, 2.3),
+        scrollTrigger: {
+          trigger: ".work .polaroids",
+          start: "left-=65% left",
+          end: "left-=30% left",
+          containerAnimation: tl,
+          scrub: true,
+          markers: true,
+        },
+      }).to(".work .room", {
+        scale: 1,
+        stagger: 0.1,
+        immediateRender: false,
+        transformOrigin: "center",
+        ease: ExpoScaleEase.config(1, 2.3),
+        scrollTrigger: {
+          trigger: ".work .polaroids",
+          start: "left-=30% left",
+          end: "left left",
+          containerAnimation: tl,
+          scrub: true,
+          markers: true,
+        },
+      }); */
+
+      // Second animation: Scale from 2.3 to 1
+      /* tl.fromTo(
+        ".work .room",
+        {
+          scale: 2.3,
+          transformOrigin: "center",
+          immediateRender: false,
+          // ease: ExpoScaleEase.config(2.3, 1),
+          scrollTrigger: {
+            trigger: ".work .polaroids",
+            start: "left-=30% left",
+            end: "left-=10% left",
+            containerAnimation: tl,
+            scrub: true,
+            markers: true,
+          },
+        },
+        {
+          scale: 1,
+          transformOrigin: "center",
+          immediateRender: false,
+        }
+      ); */
     }, 500);
 
-    /* 
-
-    const slides = gsap.utils.toArray(".slider__section");
-
-    let sum = 0;
-    slides.forEach((slide) => {
-      sum += slide.offsetWidth;
-    });
-    console.log(sum);
-
-    tl.to(sliderInner.current, {
-      x: -amountToScroll,
-    })
+    /* BG
       .to(
         ".landing__city__tree--1",
         {
@@ -127,24 +188,41 @@ function App() {
       <div className="slider" ref={slider}>
         <div className="slider__inner" ref={sliderInner}>
           <div className="slider__inner__wrap">
-            <div className="slider__section-content">
+            {/* <div className="slider__section-content m_w_f">
               <h1>Portfolio</h1>
-              <h3>Sead Sabanovic</h3>
+              <h4>Sead Sabanovic</h4>
             </div>
+            <div className="slider__section-content m_w_f">
+              <h3>Introduction</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
+                quas et sequi nulla sed aut odit quibusdam temporibus tenetur
+                deserunt.
+              </p>
+            </div> */}
             <Balcony />
-            <About>
+            {/* <About>
               <div className="slider__section-content">
-                <h1>Portfolio</h1>
-                <h3>Sead Sabanovic</h3>
+                <h3>ABOUT</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquam similique accusamus cupiditate voluptatem rem ipsum!
+                  Corrupti laborum quasi atque cum.
+                </p>
               </div>
-            </About>
-            <About>
+            </About> */}
+            <Work>
               <div className="slider__section-content">
-                <h1>Portfolio</h1>
-                <h3>Sead Sabanovic</h3>
+                <h3>Work</h3>
+                <p>
+                  Please note that the portfolio displayed here represents only
+                  a portion of my work. Due to non-disclosure agreements (
+                  <span>NDA</span>) with certain clients and projects, I am
+                  unable to showcase the complete range of my experience.
+                </p>
               </div>
-            </About>
-            <div className="slider__section-content">
+            </Work>
+            <div className="slider__section-content m_w_f">
               <h1>Portfolio</h1>
               <h3>Sead Sabanovic</h3>
             </div>
