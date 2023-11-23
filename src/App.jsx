@@ -8,7 +8,6 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Work from "./components/Work";
 import Balcony from "./components/Balcony";
-import { ExpoScaleEase } from "gsap/all";
 import About from "./components/About";
 
 function App() {
@@ -25,12 +24,11 @@ function App() {
       let tl = gsap.timeline({
         defaults: {
           ease: "none",
-          duration: 1,
         },
         scrollTrigger: {
           trigger: slider.current,
           pin: true,
-          scrub: 2,
+          scrub: 6,
           end: "+=" + amountToScroll,
           invalidateOnRefresh: true,
         },
@@ -60,99 +58,117 @@ function App() {
       // First animation: Scale from 1 to 2.3
       tl.to(".work .room", {
         scale: 2.3,
+        x: "30%",
         transformOrigin: "center",
-        ease: ExpoScaleEase.config(1, 2.3),
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ".work .polaroids",
-          start: "left-=65% left",
-          end: "left-=30% left",
+          start: "left-=40% left",
+          end: "left-=10% left",
           containerAnimation: tl,
           scrub: true,
           // markers: true,
         },
-      }).to(".work .room", {
-        scale: 1,
-        stagger: 0.1,
-        immediateRender: false,
-        transformOrigin: "center",
-        ease: ExpoScaleEase.config(2.3, 1),
-        scrollTrigger: {
-          trigger: ".work .polaroids",
-          start: "left-=30% left",
-          end: "left left",
-          containerAnimation: tl,
-          scrub: true,
-          // markers: true,
-        },
-      });
+      })
+        .to(".work .room", {
+          scale: 2.3,
+          x: "30%",
+          stagger: 0.1,
+          immediateRender: false,
+          transformOrigin: "center",
+          scrollTrigger: {
+            trigger: ".work .polaroids",
+            start: "left-=10% left",
+            end: "left+=90% left",
+            containerAnimation: tl,
+            scrub: true,
+            // markers: true,
+          },
+        })
+        .to(".work .room", {
+          scale: 1,
+          x: "0%",
+          stagger: 0.2,
+          immediateRender: false,
+          transformOrigin: "center",
+          ease: "power2.in",
+          scrollTrigger: {
+            trigger: ".work .polaroids",
+            start: "left+=90% left",
+            end: "left+=120% left",
+            containerAnimation: tl,
+            scrub: true,
+            // markers: true,
+          },
+        });
 
       tl.to(
         ".landing__city__tree--1",
         {
-          backgroundPositionX: `-=${slides.length * 100}%`,
+          backgroundPositionX: `-=900px`,
         },
         "-=100%"
       )
         .to(
           ".landing__city__tree--2",
           {
-            backgroundPositionX: `-=${slides.length * 90}%`,
+            backgroundPositionX: `-=700px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__tree--3",
           {
-            backgroundPositionX: `-=${slides.length * 80}%`,
+            backgroundPositionX: `-=500px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--1",
           {
-            backgroundPositionX: `-=${slides.length * 90}%`,
+            backgroundPositionX: `-=800px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--2",
           {
-            backgroundPositionX: `-=${slides.length * 85}%`,
+            backgroundPositionX: `-=600px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--3",
           {
-            backgroundPositionX: `-=${slides.length * 85}%`,
+            backgroundPositionX: `-=550px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--4",
           {
-            backgroundPositionX: `-=${slides.length * 55}%`,
+            backgroundPositionX: `-=450px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--6",
           {
-            backgroundPositionX: `-=${slides.length * 40}%`,
+            backgroundPositionX: `-=400px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--7",
           {
-            backgroundPositionX: `-=${slides.length * 38}%`,
+            backgroundPositionX: `-=350px`,
           },
           "-=100%"
         )
         .to(
           ".landing__city__building--8",
           {
-            backgroundPositionX: `-=${slides.length * 20}%`,
+            backgroundPositionX: `-=300px`,
           },
           "-=100%"
         );
@@ -198,10 +214,15 @@ function App() {
               </div>
             </Work>
             <div className="slider__section-content m_w_f">
-              <h3>Credits</h3>
+              <h4>Credits</h4>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                perspiciatis.
+                <span>Illustrations </span>
+                <br />
+                <a>storyset.com</a>
+                <span> ; </span>
+                <a>freepik.com</a>
+                <br />
+                &copy; Sead Sabanovic 2023
               </p>
             </div>
           </div>

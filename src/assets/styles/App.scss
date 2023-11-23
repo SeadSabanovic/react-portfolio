@@ -55,7 +55,7 @@ body {
   inset: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to top, #fff, #c9c9c9);
+  background: linear-gradient(to top, #fff, #9e9e9e);
 
   .landing__city {
     height: 100%;
@@ -72,62 +72,82 @@ body {
       background-repeat: repeat;
       background-size: 50vw 100%;
       background-position-y: 0%;
+      background-position-x: 0px;
 
       &--1 {
         z-index: 4;
-        background-position-x: 137%;
+        background-position-x: 137px;
         height: 40vh;
         background-image: url("../images/building1.svg");
+        background-size: 100vw 100%;
+
+        @media (max-width: 768px) {
+          background-size: 150vw 100%;
+        }
       }
 
       &--2 {
         z-index: 3;
-        background-position-x: 68%;
-        height: 43vh;
+        height: 37vh;
         background-image: url("../images/building2.svg");
+        background-size: 120vw 100%;
+        background-position-x: 40vh;
+
+        @media (max-width: 768px) {
+          background-size: 160vw 100%;
+        }
       }
 
       &--3 {
         z-index: 2;
-        background-position-x: 10%;
         height: 46vh;
         background-image: url("../images/building3.svg");
+        background-size: 120vw 100%;
+        background-position-x: -40vh;
+
+        @media (max-width: 768px) {
+          background-size: 180vw 100%;
+        }
       }
 
       &--4 {
         z-index: 0;
-        background-position-x: 10%;
         height: 50vh;
         background-image: url("../images/building4.svg");
-      }
 
-      &--5 {
-        z-index: -1;
-        background-position-x: 20%;
-        height: 42vh;
-        background-image: url("../images/building5.svg");
+        @media (max-width: 768px) {
+          background-size: 180vw 100%;
+        }
       }
 
       &--6 {
         z-index: -1;
-        background-position-x: 89%;
         height: 40vh;
         background-image: url("../images/building6.svg");
+        background-size: 50vw 100%;
+        background-position-x: -40vh;
+
+        @media (max-width: 768px) {
+          background-size: 80vw 100%;
+        }
       }
 
       &--7 {
-        z-index: -1;
-        background-position-x: 8%;
-        height: 40vh;
+        z-index: -2;
+        height: 35vh;
         background-image: url("../images/building7.svg");
+        background-position-x: -20vh;
+
+        @media (max-width: 768px) {
+          background-size: 80vw 100%;
+        }
       }
 
       &--8 {
-        z-index: -2;
-        background-position: 0%;
-        height: 40vh;
+        z-index: -3;
+        height: 35vh;
         background-image: url("../images/building8.svg");
-        background-size: contain;
+        background-size: cover;
         background-repeat: repeat;
       }
     }
@@ -246,8 +266,12 @@ body {
 
 .about {
   .slider__section-content {
-    margin-left: 75vh;
+    margin-left: 15vh;
     width: 70vh;
+
+    p {
+      max-width: 400px;
+    }
   }
 
   .fridge {
@@ -290,18 +314,18 @@ body {
     z-index: 1;
     position: absolute;
     bottom: 0;
-    left: 90vh;
+    left: 37vh;
 
     &__img {
-      width: 150vh;
+      width: 140vh;
     }
 
     &__hasbulla {
       position: absolute;
-      top: 1.2vh;
-      left: 68vh;
-      height: 27vh;
-      width: 45.1vh;
+      top: 1.18vh;
+      left: 63.5vh;
+      height: 25vh;
+      width: 42.2vh;
       object-fit: cover;
       filter: grayscale(100%);
     }
@@ -310,7 +334,7 @@ body {
       z-index: 1;
       position: absolute;
       top: 22.5vh;
-      left: 125.5vh;
+      left: 117vh;
       width: 5vh;
       height: 20px;
 
@@ -389,10 +413,10 @@ body {
 
   .polaroids {
     padding-top: 10vh;
-    padding: 10vh 100vh 0 10vh;
+    margin: 0 100vh 0 10vh;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     align-content: center;
     gap: 2vh;
     align-items: center;

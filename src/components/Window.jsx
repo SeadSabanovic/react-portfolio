@@ -4,7 +4,6 @@ export default function Window() {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleToggle = () => {
-    console.log(isOpen);
     setIsOpen((prevState) => {
       return !prevState;
     });

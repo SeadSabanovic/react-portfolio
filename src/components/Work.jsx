@@ -21,7 +21,7 @@ export default function Work({ children }) {
         {children}
         <div className="polaroids">
           {PROJECTS.map((project, index) => {
-            return (
+            const content = (
               <a
                 key={index}
                 className={`polaroids__polaroid polaroids__polaroid--${index}`}
@@ -35,6 +35,11 @@ export default function Work({ children }) {
                 <h6 className="polaroids__polaroid__name">{project.name}</h6>
               </a>
             );
+            if (index !== 2 && index !== 5) {
+              return content;
+            } else {
+              return [content, <div key={`empty_${index}`}></div>];
+            }
           })}
         </div>
       </Room>
