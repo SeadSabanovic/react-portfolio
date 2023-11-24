@@ -28,7 +28,7 @@ export default function Work({ children }) {
               >
                 <img
                   className="polaroids__polaroid__img"
-                  src={temp}
+                  src={project.img}
                   alt=""
                   loading="lazy"
                 />

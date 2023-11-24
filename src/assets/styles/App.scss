@@ -183,6 +183,7 @@ body {
 }
 
 // Sections
+.landing,
 .about,
 .balcony,
 .work {
@@ -230,6 +231,42 @@ body {
     right: 0;
     height: 10vh;
     background-color: #a1a1a1;
+  }
+}
+
+.landing {
+  min-width: 100vw;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+
+    &__scroll {
+      opacity: 0.5;
+      z-index: -1;
+      position: absolute;
+      inset: 50%;
+      transform: translate(-50%, -50%);
+      height: 50vh;
+      animation: rotate 20s infinite linear;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
   }
 }
 
@@ -287,7 +324,7 @@ body {
     .time {
       position: absolute;
       top: 40.4vh;
-      left: 68.25vh;
+      left: 68.35vh;
       z-index: 1;
       color: #fff;
       font-size: 1.6vh;
@@ -412,28 +449,50 @@ body {
   }
 
   .polaroids {
-    padding-top: 10vh;
-    margin: 0 100vh 0 10vh;
+    height: fit-content;
+    align-self: center;
+    padding: 10svh 2svh;
+    border: 1vh solid #3e3e3e;
+    margin: 10vh 100vh 0 30vh;
     position: relative;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     align-content: center;
-    gap: 2vh;
     align-items: center;
-    height: 100%;
+    border-radius: 2vh;
+    gap: 1vh;
 
     &__polaroid {
+      position: relative;
       width: 10vh;
       padding: 0.5vh;
       background-color: darken(#fff, 2%);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       transition: transform 0.3s;
+      transform-origin: top;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0.25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5px;
+        height: 5px;
+        background-color: $color-accent;
+        border-radius: 50%;
+        border: 1px solid darken($color-accent, 5%);
+      }
 
       &:hover {
+        z-index: 1;
         transform: rotate(8deg);
       }
 
       &__img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
         filter: grayscale(100%);
       }
 
@@ -441,6 +500,7 @@ body {
         font-size: 0.5vh;
         margin-top: 0.5vh;
         text-align: center;
+        color: $color-text;
       }
     }
   }

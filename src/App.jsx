@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Work from "./components/Work";
 import Balcony from "./components/Balcony";
 import About from "./components/About";
+import Landing from "./components/Landing";
 
 function App() {
   const slider = useRef();
@@ -28,7 +29,7 @@ function App() {
         scrollTrigger: {
           trigger: slider.current,
           pin: true,
-          scrub: 6,
+          scrub: 1,
           end: "+=" + amountToScroll,
           invalidateOnRefresh: true,
         },
@@ -55,50 +56,46 @@ function App() {
         });
       }); */
 
-      // First animation: Scale from 1 to 2.3
       tl.to(".work .room", {
         scale: 2.3,
-        x: "30%",
         transformOrigin: "center",
-        ease: "power2.out",
+        ease: "power2.inOut",
         scrollTrigger: {
           trigger: ".work .polaroids",
-          start: "left-=40% left",
-          end: "left-=10% left",
+          start: "left-=110% left",
+          end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
-          // markers: true,
+          markers: true,
         },
       })
         .to(".work .room", {
           scale: 2.3,
-          x: "30%",
           stagger: 0.1,
           immediateRender: false,
           transformOrigin: "center",
           scrollTrigger: {
             trigger: ".work .polaroids",
-            start: "left-=10% left",
-            end: "left+=90% left",
+            start: "left-=80% left",
+            end: "left+=70% left",
             containerAnimation: tl,
             scrub: true,
-            // markers: true,
+            markers: true,
           },
         })
         .to(".work .room", {
           scale: 1,
-          x: "0%",
           stagger: 0.2,
           immediateRender: false,
           transformOrigin: "center",
-          ease: "power2.in",
+          ease: "power2.inOut",
           scrollTrigger: {
             trigger: ".work .polaroids",
-            start: "left+=90% left",
-            end: "left+=120% left",
+            start: "left+=70% left",
+            end: "left+=100% left",
             containerAnimation: tl,
             scrub: true,
-            // markers: true,
+            markers: true,
           },
         });
 
@@ -179,18 +176,12 @@ function App() {
       <div className="slider" ref={slider}>
         <div className="slider__inner" ref={sliderInner}>
           <div className="slider__inner__wrap">
-            <div className="slider__section-content m_w_f">
+            {/* <div className="slider__section-content m_w_f">
               <h1>Portfolio</h1>
               <h4>Sead Sabanovic</h4>
-            </div>
-            <div className="slider__section-content m_w_f">
-              <h3>Introduction</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
-                quas et sequi nulla sed aut odit quibusdam temporibus tenetur
-                deserunt.
-              </p>
-            </div>
+            </div> */}
+            <Landing />
+
             <Balcony />
             <About>
               <div className="slider__section-content">
