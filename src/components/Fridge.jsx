@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import kitchen from '../assets/images/kitchen.svg'
+import kitchen from "../assets/images/kitchen.svg";
 
 export default function Fridge() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -20,7 +20,7 @@ export default function Fridge() {
 
   return (
     <div className="fridge">
-      <img className="fridge__svg" src={kitchen} alt="" />
+      <img loading="lazy" className="fridge__svg" src={kitchen} alt="" />
 
       <div className="time">{formattedTime}</div>
     </div>

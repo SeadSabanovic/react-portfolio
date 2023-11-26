@@ -11,6 +11,9 @@ import Balcony from "./components/Balcony";
 import About from "./components/About";
 import Landing from "./components/Landing";
 
+import scroll from "./assets/images/scroll.svg";
+import down from "./assets/icons/down.svg";
+
 function App() {
   const slider = useRef();
   const sliderInner = useRef();
@@ -20,8 +23,8 @@ function App() {
       const amountToScroll =
         sliderInner.current.offsetWidth - window.innerWidth;
 
-      console.log(sliderInner.current.offsetWidth);
-      console.log(amountToScroll);
+      /* console.log(sliderInner.current.offsetWidth);
+      console.log(amountToScroll); */
       let tl = gsap.timeline({
         defaults: {
           ease: "none",
@@ -32,6 +35,11 @@ function App() {
           scrub: 1,
           end: "+=" + amountToScroll,
           invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            // self.progress will give you the current progress of the ScrollTrigger
+            const scrollTriggerProgress = self.progress;
+            // console.log("ScrollTrigger Progress:", scrollTriggerProgress);
+          },
         },
       });
 
@@ -39,65 +47,34 @@ function App() {
         x: -amountToScroll,
       });
 
-      const slides = gsap.utils.toArray(".slider__section-content");
-
-      /* slides.forEach((slide) => {
-        tl.from(slide, {
-          y: 50,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: slide,
-            start: "left center",
-            end: "center center",
-            containerAnimation: tl,
-            scrub: true,
-            ease: "elastic.out(1,1)",
-          },
-        });
-      }); */
-
       tl.to(".work .room", {
         scale: 2.3,
         transformOrigin: "center",
         ease: "power2.inOut",
+        immediateRender: false,
         scrollTrigger: {
           trigger: ".work .polaroids",
-          start: "left-=110% left",
+          start: "left-=120% left",
           end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
-          markers: true,
+          // markers: true,
         },
-      })
-        .to(".work .room", {
-          scale: 2.3,
-          stagger: 0.1,
-          immediateRender: false,
-          transformOrigin: "center",
-          scrollTrigger: {
-            trigger: ".work .polaroids",
-            start: "left-=80% left",
-            end: "left+=70% left",
-            containerAnimation: tl,
-            scrub: true,
-            markers: true,
-          },
-        })
-        .to(".work .room", {
-          scale: 1,
-          stagger: 0.2,
-          immediateRender: false,
-          transformOrigin: "center",
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: ".work .polaroids",
-            start: "left+=70% left",
-            end: "left+=100% left",
-            containerAnimation: tl,
-            scrub: true,
-            markers: true,
-          },
-        });
+      }).to(".work .room", {
+        scale: 1,
+        stagger: 0.1,
+        immediateRender: false,
+        transformOrigin: "center",
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".work .polaroids",
+          start: "left+=70% left",
+          end: "left+=110% left",
+          containerAnimation: tl,
+          scrub: true,
+          // markers: true,
+        },
+      });
 
       tl.to(
         ".landing__city__tree--1",
@@ -173,23 +150,32 @@ function App() {
   });
   return (
     <>
+      <div className="noise"></div>
       <div className="slider" ref={slider}>
         <div className="slider__inner" ref={sliderInner}>
           <div className="slider__inner__wrap">
-            {/* <div className="slider__section-content m_w_f">
-              <h1>Portfolio</h1>
-              <h4>Sead Sabanovic</h4>
-            </div> */}
             <Landing />
-
             <Balcony />
             <About>
               <div className="slider__section-content">
                 <h3>ABOUT</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aliquam similique accusamus cupiditate voluptatem rem ipsum!
-                  Corrupti laborum quasi atque cum.
+                  Hello! I'm <span>Sead Sabanovic</span>, a developer excited
+                  about entering the world of React. With 26 years of life
+                  experience and over 3 years of development experience, I bring
+                  a combination of skills, passion, and a strong desire to
+                  excel.
+                </p>
+                <p>
+                  Highly motivated, quick to learn, and eager to prove myself by
+                  taking on challenging tasks. If you're interested in learning
+                  more about my qualifications and experience, please feel free
+                  to connect with me via{" "}
+                  <a href="" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>{" "}
+                  or reach out via{" "}
+                  <a href="mailto:your.email@example.com">email</a>.
                 </p>
               </div>
             </About>
@@ -198,23 +184,36 @@ function App() {
                 <h3>Work</h3>
                 <p>
                   Please note that the portfolio displayed here represents only
-                  a portion of my work. Due to non-disclosure agreements (
-                  <span>NDA</span>) with certain clients and projects, I am
-                  unable to showcase the complete range of my experience.
+                  a portion of my work. Due to non-disclosure agreements with
+                  certain clients and projects, I am unable to showcase the
+                  complete range of my experience.
+                </p>
+                <p>
+                  Feel free to visit my <a href="">GitHub</a> profile to get a
+                  broader view of my coding skills and the variety of projects
+                  I've been involved in.
                 </p>
               </div>
             </Work>
-            <div className="slider__section-content m_w_f">
-              <h4>Credits</h4>
-              <p>
-                <span>Illustrations </span>
-                <br />
-                <a>storyset.com</a>
-                <span> ; </span>
-                <a>freepik.com</a>
-                <br />
-                &copy; Sead Sabanovic 2023
-              </p>
+            <div className="credits">
+              <div className="slider__section-content">
+                <h6>Illustrations</h6>
+                <a
+                  href="https://storyset.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  storyset.com
+                </a>
+                <a
+                  href="https://www.freepik.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  freepik.com
+                </a>
+                <p>&copy; Sead Sabanovic Portfolio 2023</p>
+              </div>
             </div>
           </div>
         </div>
@@ -222,6 +221,8 @@ function App() {
       {
         <div className="bg">
           <div className="landing__city">
+            <img className="bg__scroll" src={scroll} alt="" />
+            <img className="bg__icon" src={down} alt="" />
             <div className="landing__city__tree landing__city__tree--1"></div>
             <div className="landing__city__tree landing__city__tree--2"></div>
             <div className="landing__city__tree landing__city__tree--3"></div>

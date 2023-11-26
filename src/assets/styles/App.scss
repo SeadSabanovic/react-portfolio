@@ -25,6 +25,71 @@ body {
   height: 100vh;
 }
 
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0) 80%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  overflow: hidden;
+
+  &::after {
+    opacity: 0.1;
+    content: "";
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    z-index: -1;
+    animation: animateGrain 3s steps(10) infinite;
+    background-repeat: repeat;
+    background-image: url("../images/noise.png");
+  }
+}
+
+@keyframes animateGrain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, -20%);
+  }
+  30% {
+    transform: translate(-5%, -10%);
+  }
+  40% {
+    transform: translate(-15%, -20%);
+  }
+
+  50% {
+    transform: translate(-5%, -10%);
+  }
+  60% {
+    transform: translate(-15%, -20%);
+  }
+  70% {
+    transform: translate(-5%, -10%);
+  }
+  80% {
+    transform: translate(-15%, -20%);
+  }
+  90% {
+    transform: translate(-5%, -10%);
+  }
+  100% {
+    transform: translate(-15%, -20%);
+  }
+}
+
 .slider {
   z-index: 1;
   height: 100vh;
@@ -44,9 +109,15 @@ body {
   }
 
   &__section-content {
-    padding: 24px;
     flex: 0 0 auto;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    p {
+      max-width: calc(100vw - 2 * 24px);
+    }
   }
 }
 
@@ -56,6 +127,55 @@ body {
   height: 100%;
   width: 100%;
   background: linear-gradient(to top, #fff, #9e9e9e);
+
+  @keyframes scroll {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -80%) scale(0.2);
+    }
+    20% {
+      opacity: 0.2;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    80% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, 30%) scale(0.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  &__scroll {
+    opacity: 0.4;
+    z-index: -1;
+    position: absolute;
+    inset: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    animation: rotate 20s infinite linear;
+  }
+
+  &__icon {
+    opacity: 0.4;
+    width: 10vh;
+    height: 10vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: scroll 1s infinite linear;
+  }
 
   .landing__city {
     height: 100%;
@@ -186,9 +306,11 @@ body {
 .landing,
 .about,
 .balcony,
-.work {
+.work,
+.credits {
   position: relative;
   height: 100vh;
+  height: 100lvh;
   display: inline-block;
 }
 
@@ -235,13 +357,100 @@ body {
 }
 
 .landing {
-  min-width: 100vw;
-  padding: 24px;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  &__socials {
+    position: absolute;
+    z-index: 5;
+    bottom: 5svh;
+    transform: translateY(50%);
+    display: flex;
+    gap: 24px;
+
+    &__social {
+      width: 24px;
+      transition: scale 0.2s;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+
+  /* CSS */
+  .button-86 {
+    all: unset;
+    min-width: 160px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-86::after,
+  .button-86::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all 0.4s;
+  }
+
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+  }
+
+  .button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+  }
+
+  .button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
+
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+
   &__content {
+    width: 100%;
+    padding: 24px;
+    max-width: 600px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -249,23 +458,13 @@ body {
     text-align: center;
     gap: 24px;
 
-    &__scroll {
-      opacity: 0.5;
-      z-index: -1;
-      position: absolute;
-      inset: 50%;
-      transform: translate(-50%, -50%);
-      height: 50vh;
-      animation: rotate 20s infinite linear;
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
+    &__buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
   }
 }
@@ -304,11 +503,9 @@ body {
 .about {
   .slider__section-content {
     margin-left: 15vh;
+    margin-right: 15vh;
     width: 70vh;
-
-    p {
-      max-width: 400px;
-    }
+    margin-top: -20vh;
   }
 
   .fridge {
@@ -426,6 +623,7 @@ body {
   .slider__section-content {
     margin-left: 45vh;
     width: 70vh;
+    margin-top: -10vh;
   }
 
   .shelf {
@@ -443,7 +641,7 @@ body {
 
   .walldeco {
     position: absolute;
-    right: 90vh;
+    right: 100vh;
     width: 60vh;
     margin-bottom: -1px;
   }
@@ -456,7 +654,7 @@ body {
     margin: 10vh 100vh 0 30vh;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     align-content: center;
     align-items: center;
     border-radius: 2vh;
@@ -484,9 +682,28 @@ body {
         border: 1px solid darken($color-accent, 5%);
       }
 
-      &:hover {
+      &--0 {
+        transform: rotate(-10deg);
         z-index: 1;
-        transform: rotate(8deg);
+      }
+      &--4 {
+        transform: rotate(2deg);
+        z-index: 1;
+      }
+      &--5 {
+        transform: rotate(-2deg);
+        z-index: 1;
+      }
+      &--6,
+      &--9 {
+        transform: rotate(-12deg);
+        z-index: 1;
+      }
+      &--2,
+      &--10,
+      &--12 {
+        transform: rotate(10deg);
+        z-index: 2;
       }
 
       &__img {
@@ -503,6 +720,17 @@ body {
         color: $color-text;
       }
     }
+  }
+}
+
+.credits {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .slider__section-content {
+    gap: 8px;
   }
 }
 
