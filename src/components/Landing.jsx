@@ -27,17 +27,29 @@ export default function Landing() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={gh} className="landing__socials__social"></img>
+          <img
+            draggable="false"
+            src={gh}
+            className="landing__socials__social"
+          ></img>
         </a>
         <a
           href="https://www.linkedin.com/in/ssabanovic/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={li} className="landing__socials__social"></img>
+          <img
+            draggable="false"
+            src={li}
+            className="landing__socials__social"
+          ></img>
         </a>
         <a href="mailto:sead.sabanovic97@gmail.com">
-          <img src={mail} className="landing__socials__social"></img>
+          <img
+            draggable="false"
+            src={mail}
+            className="landing__socials__social"
+          ></img>
         </a>
       </div>
     </div>

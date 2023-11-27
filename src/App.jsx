@@ -24,13 +24,13 @@ function App() {
       const bars = gsap.utils.toArray(".loader__bar");
 
       setTimeout(() => {
-        gsap.to(".loader__bar__blob", {
+        /* gsap.to(".loader__bar__blob", {
           scale: 0,
         });
         gsap.to(bars, {
           stagger: 0.1,
           scaleX: 0,
-        });
+        }); */
       }, 1000);
     };
 

@@ -20,7 +20,7 @@ export default function Fridge() {
 
   return (
     <div className="fridge">
-      <img className="fridge__svg" src={kitchen} alt="" />
+      <img draggable="false" className="fridge__svg" src={kitchen} alt="" />
 
       <div className="time">{formattedTime}</div>
     </div>

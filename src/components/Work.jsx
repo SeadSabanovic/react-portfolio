@@ -13,9 +13,9 @@ export default function Work({ children }) {
   return (
     <div className="work">
       <Room w_r w_bg>
-        <img className="shelf" src={shelf} alt="" />
-        <img className="desk" src={workdesk} alt="" />
-        <img className="walldeco" src={walldeco} alt="" />
+        <img draggable="false" className="shelf" src={shelf} alt="" />
+        <img draggable="false" className="desk" src={workdesk} alt="" />
+        <img draggable="false" className="walldeco" src={walldeco} alt="" />
         {children}
         <div className="polaroids">
           {PROJECTS.map((project, index) => {
@@ -28,6 +28,7 @@ export default function Work({ children }) {
                 className={`polaroids__polaroid polaroids__polaroid--${index}`}
               >
                 <img
+                  draggable="false"
                   className="polaroids__polaroid__img"
                   src={project.img}
                   alt=""
