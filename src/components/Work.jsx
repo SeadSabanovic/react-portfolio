@@ -13,8 +13,8 @@ export default function Work({ children }) {
   return (
     <div className="work">
       <Room w_r w_bg>
-        <img loading="lazy" className="shelf" src={shelf} alt="" />
-        <img loading="lazy" className="desk" src={workdesk} alt="" />
+        <img className="shelf" src={shelf} alt="" />
+        <img className="desk" src={workdesk} alt="" />
         <img className="walldeco" src={walldeco} alt="" />
         {children}
         <div className="polaroids">
@@ -31,7 +31,6 @@ export default function Work({ children }) {
                   className="polaroids__polaroid__img"
                   src={project.img}
                   alt=""
-                  loading="lazy"
                 />
                 <h6 className="polaroids__polaroid__name">{project.name}</h6>
               </a>

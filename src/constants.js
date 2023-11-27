@@ -5,7 +5,7 @@ import stratos from "../src/assets/images/work/stratos.jpg";
 import doodle from "../src/assets/images/work/doodle.jpg";
 import clutch from "../src/assets/images/work/clutch.jpg";
 import salewa from "../src/assets/images/work/salewa.jpg";
-import saloopo from "../src/assets/images/work/saloopo.avif";
+import saloopo from "../src/assets/images/work/saloopo.jpeg";
 import font from "../src/assets/images/work/fonts.webp";
 import jcs from "../src/assets/images/work/jcs.gif";
 import para from "../src/assets/images/work/parallax.png";

@@ -3,7 +3,7 @@ import hasbulla from "../assets/images/hasbi.gif";
 export default function Coffee() {
   return (
     <div className="coffee">
-      <img loading="lazy" className="coffee__img" src={coffee} alt="" />
+      <img className="coffee__img" src={coffee} alt="" />
       <div className="coffee__smoke">
         <div className="coffee__smoke__1"></div>
         <div className="coffee__smoke__2"></div>

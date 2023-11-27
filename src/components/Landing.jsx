@@ -22,13 +22,21 @@ export default function Landing() {
         </div>
       </div>
       <div className="landing__socials">
-        <a href="">
+        <a
+          href="https://github.com/SeadSabanovic"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={gh} className="landing__socials__social"></img>
         </a>
-        <a href="">
+        <a
+          href="https://www.linkedin.com/in/ssabanovic/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={li} className="landing__socials__social"></img>
         </a>
-        <a href="">
+        <a href="mailto:sead.sabanovic97@gmail.com">
           <img src={mail} className="landing__socials__social"></img>
         </a>
       </div>

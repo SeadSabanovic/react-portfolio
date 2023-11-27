@@ -25,6 +25,65 @@ body {
   height: 100vh;
 }
 
+.loader {
+  pointer-events: none;
+  z-index: 900;
+  position: fixed;
+  height: 100vh;
+  height: 100lvh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  &__bar {
+    flex: 1;
+    background-color: #202020;
+    transform-origin: right;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__blob {
+      width: 89.6px;
+      height: 89.6px;
+      border: 11.2px solid #0000;
+      padding: 5.6px;
+      background: radial-gradient(farthest-side, #ad343e 98%, #0000) 0 0/22.4px
+          22.4px no-repeat,
+        conic-gradient(from 90deg at 11.2px 11.2px, #0000 90deg, #ad343e 0)
+          content-box,
+        conic-gradient(from -90deg at 44.8px 44.8px, #0000 90deg, #ad343e 0)
+          content-box,
+        #202020;
+      animation: blob-a4ofes 2.4s infinite;
+    }
+
+    @keyframes blob-a4ofes {
+      0% {
+        background-position: 0 0;
+      }
+
+      25% {
+        background-position: 100% 0;
+      }
+
+      50% {
+        background-position: 100% 100%;
+      }
+
+      75% {
+        background-position: 0 100%;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+  }
+}
+
 .noise {
   pointer-events: none;
   position: fixed;

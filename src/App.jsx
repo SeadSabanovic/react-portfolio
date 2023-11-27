@@ -19,13 +19,28 @@ function App() {
   const sliderInner = useRef();
 
   useEffect(() => {
+    let tl;
+    const onPageLoad = () => {
+      const bars = gsap.utils.toArray(".loader__bar");
+
+      setTimeout(() => {
+        gsap.to(".loader__bar__blob", {
+          scale: 0,
+        });
+        gsap.to(bars, {
+          stagger: 0.1,
+          scaleX: 0,
+        });
+      }, 1000);
+    };
+
     setTimeout(() => {
       const amountToScroll =
         sliderInner.current.offsetWidth - window.innerWidth;
 
       /* console.log(sliderInner.current.offsetWidth);
       console.log(amountToScroll); */
-      let tl = gsap.timeline({
+      tl = gsap.timeline({
         defaults: {
           ease: "none",
         },
@@ -58,7 +73,6 @@ function App() {
           end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
-          // markers: true,
         },
       }).to(".work .room", {
         scale: 1,
@@ -72,7 +86,6 @@ function App() {
           end: "left+=110% left",
           containerAnimation: tl,
           scrub: true,
-          // markers: true,
         },
       });
 
@@ -147,9 +160,26 @@ function App() {
           "-=100%"
         );
     }, 500);
+
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad, false);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
   });
   return (
     <>
+      <div className="loader">
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+        <div className="loader__bar">
+          <div className="loader__bar__blob"></div>
+        </div>
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+      </div>
       <div className="noise"></div>
       <div className="slider" ref={slider}>
         <div className="slider__inner" ref={sliderInner}>
@@ -171,11 +201,15 @@ function App() {
                   taking on challenging tasks. If you're interested in learning
                   more about my qualifications and experience, please feel free
                   to connect with me via{" "}
-                  <a href="" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.linkedin.com/in/ssabanovic/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     LinkedIn
                   </a>{" "}
                   or reach out via{" "}
-                  <a href="mailto:your.email@example.com">email</a>.
+                  <a href="mailto:sead.sabanovic97@gmail.com">email</a>.
                 </p>
               </div>
             </About>
@@ -189,9 +223,16 @@ function App() {
                   complete range of my experience.
                 </p>
                 <p>
-                  Feel free to visit my <a href="">GitHub</a> profile to get a
-                  broader view of my coding skills and the variety of projects
-                  I've been involved in.
+                  Feel free to visit my{" "}
+                  <a
+                    href="https://github.com/SeadSabanovic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>{" "}
+                  profile to get a broader view of my coding skills and the
+                  variety of projects I've been involved in.
                 </p>
               </div>
             </Work>

@@ -20,7 +20,7 @@ export default function Fridge() {
 
   return (
     <div className="fridge">
-      <img loading="lazy" className="fridge__svg" src={kitchen} alt="" />
+      <img className="fridge__svg" src={kitchen} alt="" />
 
       <div className="time">{formattedTime}</div>
     </div>
