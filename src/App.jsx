@@ -76,6 +76,7 @@ function App() {
           end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
+          markers: true,
         },
       }).to(".work .room", {
         scale: 1,
