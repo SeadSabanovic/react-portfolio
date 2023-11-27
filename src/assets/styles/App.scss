@@ -224,11 +224,13 @@ body {
     opacity: 0.4;
     z-index: -1;
     position: absolute;
-    inset: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 50vw;
-    animation: rotate 20s infinite linear;
     object-fit: contain;
+    object-position: center;
+    animation: rotate 20s infinite linear;
   }
 
   &__icon {
