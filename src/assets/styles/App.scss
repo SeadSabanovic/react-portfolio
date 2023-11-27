@@ -92,7 +92,8 @@ body {
   position: fixed;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: 100lvh;
   z-index: 800;
   background-image: radial-gradient(
     circle at 50% 50%,
