@@ -187,7 +187,8 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  height: 100%;
+  height: 100vh;
+  height: 100lvh;
   width: 100%;
   background: linear-gradient(to top, #fff, #9e9e9e);
 
@@ -244,7 +245,8 @@ body {
   }
 
   .landing__city {
-    height: 100%;
+    height: 100vh;
+    height: 100lvh;
     position: relative;
     left: 0;
     width: 100%;
