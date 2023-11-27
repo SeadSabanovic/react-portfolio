@@ -57,11 +57,6 @@ function App() {
           scrub: 1,
           end: "+=" + amountToScroll,
           invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            // self.progress will give you the current progress of the ScrollTrigger
-            const scrollTriggerProgress = self.progress;
-            // console.log("ScrollTrigger Progress:", scrollTriggerProgress);
-          },
         },
       });
 
@@ -75,6 +70,7 @@ function App() {
         ease: "power2.inOut",
         immediateRender: false,
         scrollTrigger: {
+          invalidateOnRefresh: true,
           trigger: ".work .polaroids",
           start: "left-=120% left",
           end: "left-=80% left",
@@ -88,6 +84,7 @@ function App() {
         transformOrigin: "center",
         ease: "power2.inOut",
         scrollTrigger: {
+          invalidateOnRefresh: true,
           trigger: ".work .polaroids",
           start: "left+=70% left",
           end: "left+=110% left",
