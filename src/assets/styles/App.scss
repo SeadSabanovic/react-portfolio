@@ -226,8 +226,7 @@ body {
     position: absolute;
     inset: 50%;
     transform: translate(-50%, -50%);
-    height: 50vh;
-    height: 50lvh;
+    width: 50vw;
     animation: rotate 20s infinite linear;
     object-fit: contain;
   }

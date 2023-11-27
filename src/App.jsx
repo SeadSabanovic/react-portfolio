@@ -35,15 +35,6 @@ function App() {
       }, 1000);
     };
 
-    const onResize = () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-      console.log(vh);
-    };
-    onResize();
-
-    window.addEventListener("resize", () => onResize());
-
     setTimeout(() => {
       const amountToScroll =
         sliderInner.current.offsetWidth - window.innerWidth;
@@ -70,13 +61,14 @@ function App() {
         ease: "power2.inOut",
         immediateRender: false,
         scrollTrigger: {
-          invalidateOnRefresh: true,
+          autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
           trigger: ".work .polaroids",
           start: "left-=120% left",
           end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
           markers: true,
+          onRefresh: () => console.log("refresh"),
         },
       }).to(".work .room", {
         scale: 1,
