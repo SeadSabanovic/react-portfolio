@@ -18,13 +18,13 @@ body {
   background-color: #fff;
   color: $color-text;
   height: 100vh;
-  height: 100lvh;
+  height: 100svh;
   overflow-x: hidden;
 }
 
 #root {
   height: 100vh;
-  height: 100lvh;
+  height: 100svh;
 }
 
 .loader {
@@ -32,7 +32,7 @@ body {
   z-index: 900;
   position: fixed;
   height: 100vh;
-  height: 100lvh;
+  height: 100svh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -155,7 +155,7 @@ body {
 .slider {
   z-index: 1;
   height: 100vh;
-  height: 100lvh;
+  height: 100svh;
   width: 100vw;
   display: flex;
   overflow: hidden;
@@ -225,16 +225,16 @@ body {
     inset: 50%;
     transform: translate(-50%, -50%);
     height: 50vh;
-    height: 50lvh;
+    height: 50svh;
     animation: rotate 20s infinite linear;
   }
 
   &__icon {
     opacity: 0.4;
     width: 10vh;
-    width: 10lvh;
+    width: 10svh;
     height: 10vh;
-    height: 10lvh;
+    height: 10svh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -264,7 +264,7 @@ body {
         z-index: 4;
         background-position-x: 137px;
         height: 40vh;
-        height: 40lvh;
+        height: 40svh;
         background-image: url("../images/building1.svg");
         background-size: 100vw 100%;
 
@@ -276,11 +276,11 @@ body {
       &--2 {
         z-index: 3;
         height: 37vh;
-        height: 37lvh;
+        height: 37svh;
         background-image: url("../images/building2.svg");
         background-size: 120vw 100%;
         background-position-x: 40vh;
-        background-position-x: 40lvh;
+        background-position-x: 40svh;
 
         @media (max-width: 768px) {
           background-size: 160vw 100%;
@@ -290,11 +290,11 @@ body {
       &--3 {
         z-index: 2;
         height: 46vh;
-        height: 46lvh;
+        height: 46svh;
         background-image: url("../images/building3.svg");
         background-size: 120vw 100%;
         background-position-x: -40vh;
-        background-position-x: -40lvh;
+        background-position-x: -40svh;
 
         @media (max-width: 768px) {
           background-size: 180vw 100%;
@@ -304,7 +304,7 @@ body {
       &--4 {
         z-index: 0;
         height: 50vh;
-        height: 50lvh;
+        height: 50svh;
         background-image: url("../images/building4.svg");
 
         @media (max-width: 768px) {
@@ -315,11 +315,11 @@ body {
       &--6 {
         z-index: -1;
         height: 40vh;
-        height: 40lvh;
+        height: 40svh;
         background-image: url("../images/building6.svg");
         background-size: 50vw 100%;
         background-position-x: -40vh;
-        background-position-x: -40lvh;
+        background-position-x: -40svh;
 
         @media (max-width: 768px) {
           background-size: 80vw 100%;
@@ -329,10 +329,10 @@ body {
       &--7 {
         z-index: -2;
         height: 35vh;
-        height: 35lvh;
+        height: 35svh;
         background-image: url("../images/building7.svg");
         background-position-x: -20vh;
-        background-position-x: -20lvh;
+        background-position-x: -20svh;
 
         @media (max-width: 768px) {
           background-size: 80vw 100%;
@@ -342,7 +342,7 @@ body {
       &--8 {
         z-index: -3;
         height: 35vh;
-        height: 35lvh;
+        height: 35svh;
         background-image: url("../images/building8.svg");
         background-size: cover;
         background-repeat: repeat;
@@ -361,21 +361,21 @@ body {
       &--1 {
         z-index: 5;
         height: 5vh;
-        height: 5lvh;
+        height: 5svh;
         background-image: url("../images/trees1.svg");
       }
 
       &--2 {
         z-index: 4;
         height: 10vh;
-        height: 10lvh;
+        height: 10svh;
         background-image: url("../images/trees2.svg");
       }
 
       &--3 {
         z-index: 2;
         height: 14vh;
-        height: 14lvh;
+        height: 14svh;
         background-image: url("../images/trees3.svg");
       }
     }
@@ -390,7 +390,7 @@ body {
 .credits {
   position: relative;
   height: 100vh;
-  height: 100lvh;
+  height: 100svh;
   display: inline-block;
 }
 
@@ -399,7 +399,7 @@ body {
   height: 100%;
   display: flex;
   padding-bottom: 10vh;
-  padding-bottom: 10lvh;
+  padding-bottom: 10svh;
   min-width: max-content;
 
   &__wall {
@@ -433,7 +433,7 @@ body {
     left: 0;
     right: 0;
     height: 10vh;
-    height: 10lvh;
+    height: 10svh;
     background-color: #a1a1a1;
   }
 }
@@ -448,7 +448,7 @@ body {
     position: absolute;
     z-index: 5;
     bottom: 5vh;
-    bottom: 5lvh;
+    bottom: 5svh;
     transform: translateY(50%);
     display: flex;
     gap: 24px;
@@ -555,7 +555,7 @@ body {
 .balcony {
   position: relative;
   width: 50vh;
-  width: 50lvh;
+  width: 50svh;
 
   &__floor {
     position: absolute;
@@ -563,28 +563,28 @@ body {
     left: 0;
     width: 100%;
     height: 10vh;
-    height: 10lvh;
+    height: 10svh;
     background-color: #a1a1a1;
   }
 
   &__cat {
     position: absolute;
     bottom: 9vh;
-    bottom: 9lvh;
+    bottom: 9svh;
     left: 2vh;
-    left: 2lvh;
+    left: 2svh;
     height: 15vh;
-    height: 15lvh;
+    height: 15svh;
   }
 
   &__fence {
     position: absolute;
     bottom: 10vh;
-    bottom: 10lvh;
+    bottom: 10svh;
     left: 24px;
     right: 24px;
     height: 30vh;
-    height: 30lvh;
+    height: 30svh;
     background-image: url("../images/fence.svg");
     background-size: cover;
   }
@@ -593,13 +593,13 @@ body {
 .about {
   .slider__section-content {
     margin-left: 15vh;
-    margin-left: 15lvh;
+    margin-left: 15svh;
     margin-right: 15vh;
-    margin-right: 15lvh;
+    margin-right: 15svh;
     width: 70vh;
-    width: 70lvh;
+    width: 70svh;
     margin-top: -20vh;
-    margin-top: -20lvh;
+    margin-top: -20svh;
   }
 
   .fridge {
@@ -607,7 +607,7 @@ body {
 
     &__svg {
       min-width: 105vh;
-      min-width: 105lvh;
+      min-width: 105svh;
       height: auto;
       display: block;
       margin-bottom: -1px;
@@ -616,16 +616,16 @@ body {
     .time {
       position: absolute;
       top: 43.4vh;
-      top: 43.4lvh;
+      top: 43.4svh;
       left: 67.35vh;
-      left: 67.35lvh;
+      left: 67.35svh;
       z-index: 1;
       color: #fff;
       font-size: 1.6vh;
-      font-size: 1.6lvh;
+      font-size: 1.6svh;
       scale: 0.7;
       width: 3.8vh;
-      width: 3.8lvh;
+      width: 3.8svh;
       text-align: center;
       animation: time 1s infinite linear;
     }
@@ -648,11 +648,11 @@ body {
     position: absolute;
     bottom: 0;
     left: 37vh;
-    left: 37lvh;
+    left: 37svh;
 
     &__img {
       width: 140vh;
-      width: 140lvh;
+      width: 140svh;
     }
 
     &__smoke {
@@ -666,23 +666,23 @@ body {
       * {
         position: absolute;
         border-radius: 5vh;
-        border-radius: 5lvh;
+        border-radius: 5svh;
         width: 1vh;
-        width: 1lvh;
+        width: 1svh;
         height: 4vh;
-        height: 4lvh;
+        height: 4svh;
         background-color: rgba(#000, 0.1);
       }
 
       &__1 {
         top: 0vh;
-        top: 0lvh;
+        top: 0svh;
         animation: smoke 2s infinite linear;
       }
 
       &__2 {
         top: 0vh;
-        top: 0lvh;
+        top: 0svh;
         left: 40%;
         animation: smoke 2s infinite linear;
         animation-delay: 0.2s;
@@ -690,7 +690,7 @@ body {
 
       &__3 {
         top: 0vh;
-        top: 0lvh;
+        top: 0svh;
         right: 0;
         animation: smoke 2s infinite linear;
         animation-delay: 0.1s;
@@ -699,17 +699,17 @@ body {
       @keyframes smoke {
         0% {
           top: 0vh;
-          top: 0lvh;
+          top: 0svh;
           opacity: 1;
         }
         90% {
           top: -5vh;
-          top: -5lvh;
+          top: -5svh;
           opacity: 0.8;
         }
         100% {
           top: -5.5vh;
-          top: -5.5lvh;
+          top: -5.5svh;
           opacity: 0;
         }
       }
@@ -722,36 +722,36 @@ body {
 
   .slider__section-content {
     margin-left: 45vh;
-    margin-left: 45lvh;
+    margin-left: 45svh;
     width: 70vh;
-    width: 70lvh;
+    width: 70svh;
     margin-top: -10vh;
-    margin-top: -10lvh;
+    margin-top: -10svh;
   }
 
   .shelf {
     position: absolute;
     left: 10vh;
-    left: 10lvh;
+    left: 10svh;
     width: 30vh;
-    width: 30lvh;
+    width: 30svh;
     margin-bottom: -1px;
   }
 
   .desk {
     position: absolute;
     width: 60vh;
-    width: 60lvh;
+    width: 60svh;
     left: 40vh;
-    left: 40lvh;
+    left: 40svh;
   }
 
   .walldeco {
     position: absolute;
     right: 100vh;
-    right: 100lvh;
+    right: 100svh;
     width: 60vh;
-    width: 60lvh;
+    width: 60svh;
     margin-bottom: -1px;
   }
 
@@ -759,39 +759,39 @@ body {
     height: fit-content;
     align-self: center;
     padding: 10vh 2vh;
-    padding: 10lvh 2lvh;
+    padding: 10svh 2svh;
     border: 1vh solid #3e3e3e;
-    border: 1lvh solid #3e3e3e;
+    border: 1svh solid #3e3e3e;
     margin: 10vh 100vh 0 30vh;
-    margin: 10lvh 100vh 0 30lvh;
+    margin: 10svh 100vh 0 30svh;
     position: relative;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     align-content: center;
     align-items: center;
     border-radius: 2vh;
-    border-radius: 2lvh;
+    border-radius: 2svh;
     gap: 1vh;
-    gap: 1lvh;
+    gap: 1svh;
 
     &::after {
       content: "2023";
       position: absolute;
       top: 1vh;
-      top: 1lvh;
+      top: 1svh;
       left: 1vh;
-      left: 1lvh;
+      left: 1svh;
       font-weight: 800;
       font-size: 2vh;
-      font-size: 2lvh;
+      font-size: 2svh;
     }
 
     &__polaroid {
       position: relative;
       width: 10vh;
-      width: 10lvh;
+      width: 10svh;
       padding: 0.5vh;
-      padding: 0.5lvh;
+      padding: 0.5svh;
       background-color: darken(#fff, 2%);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       transition: transform 0.3s;
@@ -843,9 +843,9 @@ body {
 
       &__name {
         font-size: 0.5vh;
-        font-size: 0.5lvh;
+        font-size: 0.5svh;
         margin-top: 0.5vh;
-        margin-top: 0.5lvh;
+        margin-top: 0.5svh;
         text-align: center;
         color: $color-text;
       }
@@ -969,7 +969,7 @@ body {
 .cat {
   position: absolute;
   bottom: 10vh;
-  bottom: 10lvh;
+  bottom: 10svh;
   left: 60px;
   z-index: 3;
 
