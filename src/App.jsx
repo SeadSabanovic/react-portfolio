@@ -62,6 +62,9 @@ function App() {
         immediateRender: false,
         scrollTrigger: {
           autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+          limitCallbacks: true,
+          ignoreMobileResize: true,
+          invalidateOnRefresh: false,
           trigger: ".work .polaroids",
           start: "left-=120% left",
           end: "left-=80% left",
