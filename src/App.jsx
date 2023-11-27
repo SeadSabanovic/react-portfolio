@@ -14,6 +14,10 @@ import Landing from "./components/Landing";
 import scroll from "./assets/images/scroll.svg";
 import down from "./assets/icons/down.svg";
 
+ScrollTrigger.config({
+  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+});
+
 function App() {
   const slider = useRef();
   const sliderInner = useRef();
@@ -36,42 +40,40 @@ function App() {
     };
 
     setTimeout(() => {
-      const amountToScroll =
-        sliderInner.current.offsetWidth - window.innerWidth;
       tl = gsap.timeline({
         defaults: {
           ease: "none",
         },
         scrollTrigger: {
           trigger: slider.current,
+          invalidateOnRefresh: true,
           pin: true,
           scrub: 1,
-          end: "+=" + amountToScroll,
-          invalidateOnRefresh: true,
+          end: () =>
+            "+=" + (sliderInner.current.offsetWidth - window.innerWidth),
         },
       });
 
       tl.to(sliderInner.current, {
-        x: -amountToScroll,
+        x: -(sliderInner.current.offsetWidth - window.innerWidth),
       });
 
       tl.to(".work .room", {
         scale: 2.3,
         transformOrigin: "center",
-        ease: "power2.inOut",
         immediateRender: false,
+        ease: "power2.inOut",
         scrollTrigger: {
-          autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-          limitCallbacks: true,
           ignoreMobileResize: true,
-          invalidateOnRefresh: false,
+          invalidateOnRefresh: true,
           trigger: ".work .polaroids",
           start: "left-=120% left",
           end: "left-=80% left",
           containerAnimation: tl,
           scrub: true,
-          markers: true,
-          onRefresh: () => console.log("refresh"),
+          // markers: true,
+          onRefresh: (self) => self.refresh(),
+          onEnter: () => console.log("enter"),
         },
       }).to(".work .room", {
         scale: 1,
