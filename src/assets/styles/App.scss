@@ -229,7 +229,7 @@ body {
     height: 50vh;
     height: 50lvh;
     animation: rotate 20s infinite linear;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__icon {
