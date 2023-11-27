@@ -225,16 +225,16 @@ body {
     inset: 50%;
     transform: translate(-50%, -50%);
     height: 50vh;
-    height: 50svh;
+    height: 50lvh;
     animation: rotate 20s infinite linear;
   }
 
   &__icon {
     opacity: 0.4;
     width: 10vh;
-    width: 10svh;
+    width: 10lvh;
     height: 10vh;
-    height: 10svh;
+    height: 10lvh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -666,23 +666,23 @@ body {
       * {
         position: absolute;
         border-radius: 5vh;
-        border-radius: 5svh;
+        border-radius: 5lvh;
         width: 1vh;
-        width: 1svh;
+        width: 1lvh;
         height: 4vh;
-        height: 4svh;
+        height: 4lvh;
         background-color: rgba(#000, 0.1);
       }
 
       &__1 {
         top: 0vh;
-        top: 0svh;
+        top: 0lvh;
         animation: smoke 2s infinite linear;
       }
 
       &__2 {
         top: 0vh;
-        top: 0svh;
+        top: 0lvh;
         left: 40%;
         animation: smoke 2s infinite linear;
         animation-delay: 0.2s;
@@ -690,7 +690,7 @@ body {
 
       &__3 {
         top: 0vh;
-        top: 0svh;
+        top: 0lvh;
         right: 0;
         animation: smoke 2s infinite linear;
         animation-delay: 0.1s;
@@ -699,17 +699,17 @@ body {
       @keyframes smoke {
         0% {
           top: 0vh;
-          top: 0svh;
+          top: 0lvh;
           opacity: 1;
         }
         90% {
           top: -5vh;
-          top: -5svh;
+          top: -5lvh;
           opacity: 0.8;
         }
         100% {
           top: -5.5vh;
-          top: -5.5svh;
+          top: -5.5lvh;
           opacity: 0;
         }
       }
@@ -759,18 +759,18 @@ body {
     height: fit-content;
     align-self: center;
     padding: 10vh 2vh;
-    padding: 10svh 2svh;
+    padding: 10lvh 2lvh;
     border: 1vh solid #3e3e3e;
-    border: 1svh solid #3e3e3e;
+    border: 1lvh solid #3e3e3e;
     margin: 10vh 100vh 0 30vh;
-    margin: 10svh 100vh 0 30svh;
+    margin: 10lvh 100vh 0 30lvh;
     position: relative;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     align-content: center;
     align-items: center;
     border-radius: 2vh;
-    border-radius: 2svh;
+    border-radius: 2lvh;
     gap: 1vh;
     gap: 1lvh;
 
@@ -843,9 +843,9 @@ body {
 
       &__name {
         font-size: 0.5vh;
-        font-size: 0.5svh;
+        font-size: 0.5lvh;
         margin-top: 0.5vh;
-        margin-top: 0.5svh;
+        margin-top: 0.5lvh;
         text-align: center;
         color: $color-text;
       }
