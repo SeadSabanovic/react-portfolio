@@ -70,7 +70,7 @@ function App() {
         ease: "power2.inOut",
         immediateRender: false,
         scrollTrigger: {
-          invalidateOnRefresh: false,
+          invalidateOnRefresh: true,
           trigger: ".work .polaroids",
           start: "left-=120% left",
           end: "left-=80% left",
