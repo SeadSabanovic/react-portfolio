@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     let tl;
+
     const onPageLoad = () => {
       const bars = gsap.utils.toArray(".loader__bar");
 
@@ -34,12 +35,18 @@ function App() {
       }, 1000);
     };
 
+    const onResize = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      console.log(vh);
+    };
+    onResize();
+
+    window.addEventListener("resize", () => onResize());
+
     setTimeout(() => {
       const amountToScroll =
         sliderInner.current.offsetWidth - window.innerWidth;
-
-      /* console.log(sliderInner.current.offsetWidth);
-      console.log(amountToScroll); */
       tl = gsap.timeline({
         defaults: {
           ease: "none",
