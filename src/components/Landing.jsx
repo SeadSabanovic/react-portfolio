@@ -13,12 +13,22 @@ export default function Landing() {
         </h3>
         <h6>Frontend / UI Developer</h6>
         <div className="landing__content__buttons">
-          <button className="button-86" role="button">
+          <a
+            href="/Sead Sabanovic CV.pdf"
+            download="Sead Sabanovic CV.pdf"
+            className="button-86"
+            role="button"
+          >
             Curriculum Vitae
-          </button>
-          <button className="button-86" role="button">
+          </a>
+          <a
+            href="/Sead Sabanovic Cover Letter.pdf"
+            download="Sead Sabanovic Cover Letter.pdf"
+            className="button-86"
+            role="button"
+          >
             Cover Letter
-          </button>
+          </a>
         </div>
       </div>
       <div className="landing__socials">
