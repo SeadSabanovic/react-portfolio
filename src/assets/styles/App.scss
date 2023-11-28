@@ -2,10 +2,6 @@
 @import "./variables";
 @import "./typography";
 
-/* * ::-webkit-scrollbar {
-  display: none;
-} */
-
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   margin: 0;
@@ -36,7 +32,6 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  display: none;
 
   &__bar {
     flex: 1;
